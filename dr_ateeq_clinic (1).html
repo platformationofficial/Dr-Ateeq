@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Ateeq — Skin Specialist | Mailsi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --teal:#0B7B78;
+  --teal-light:#E6F4F3;
+  --teal-mid:#C2E4E2;
+  --teal-dark:#065855;
+  --accent:#E8734A;
+  --cream:#FAFCFC;
+  --white:#FFFFFF;
+  --text:#0F2B2A;
+  --text-soft:#3D6462;
+  --text-muted:#7FA8A6;
+  --border:#D0E8E6;
+  --radius:14px;
+  --shadow:0 2px 20px rgba(11,123,120,0.08);
+}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.7;}
+
+/* ── NAV ── */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;padding:0 2rem;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:66px;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{width:38px;height:38px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--text);line-height:1.1;}
+.logo-text small{display:block;font-family:'Outfit',sans-serif;font-size:11px;color:var(--text-muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text-soft);font-size:14px;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-links a.active{color:var(--teal);}
+.nav-btns{display:flex;gap:10px;align-items:center;}
+.btn{padding:9px 20px;border-radius:9px;font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all 0.2s;font-family:'Outfit',sans-serif;}
+.btn-ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal);}
+.btn-ghost:hover{background:var(--teal-light);}
+.btn-solid{background:var(--teal);color:var(--white);}
+.btn-solid:hover{background:var(--teal-dark);}
+.btn-accent{background:var(--accent);color:var(--white);}
+.btn-accent:hover{filter:brightness(0.92);}
+
+/* ── TABS ── */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(120deg,#0B7B78 0%,#0A6360 55%,#065855 100%);padding:5rem 2rem;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.04);pointer-events:none;}
+.hero::before{content:'';position:absolute;right:80px;bottom:-60px;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,0.03);pointer-events:none;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#B2EAE8;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:1.2rem;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,54px);color:var(--white);line-height:1.1;margin-bottom:1rem;}
+.hero h1 em{font-style:italic;color:#9FD9D7;}
+.hero-sub{color:#B2EAE8;font-size:15px;max-width:420px;margin-bottom:2rem;line-height:1.8;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.18);border-radius:var(--radius);padding:1.5rem;color:var(--white);}
+.hero-card h3{font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:1rem;}
+.hero-stat{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:14px;color:#C8ECEA;}
+.hero-stat i{font-size:16px;color:#9FD9D7;}
+.hero-book-btn{width:100%;background:var(--white);color:var(--teal);border:none;padding:13px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;margin-top:1rem;font-family:'Outfit',sans-serif;transition:all 0.2s;}
+.hero-book-btn:hover{background:#E6F4F3;}
+
+/* ── SECTIONS ── */
+.section{max-width:1100px;margin:0 auto;padding:4rem 2rem;}
+.sec-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:6px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,38px);color:var(--text);margin-bottom:0.75rem;line-height:1.2;}
+.sec-body{color:var(--text-soft);max-width:520px;font-size:14px;}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2.5rem;}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:box-shadow 0.2s,border-color 0.2s;}
+.service-card:hover{box-shadow:var(--shadow);border-color:var(--teal-mid);}
+.service-icon{width:44px;height:44px;border-radius:10px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:1rem;}
+.service-name{font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px;}
+.service-desc{font-size:13px;color:var(--text-muted);line-height:1.6;}
+
+/* ── BOOKING FORM ── */
+.booking-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.booking-head{background:linear-gradient(120deg,var(--teal),var(--teal-dark));padding:2rem 2.5rem;color:var(--white);}
+.booking-head h2{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:4px;}
+.booking-head p{color:#B2EAE8;font-size:14px;}
+.booking-body{padding:2.5rem;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group.full{grid-column:1/-1;}
+label{font-size:13px;font-weight:500;color:var(--text-soft);}
+input,select,textarea{border:1.5px solid var(--border);border-radius:9px;padding:11px 14px;font-size:14px;font-family:'Outfit',sans-serif;color:var(--text);background:var(--cream);transition:border-color 0.2s;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);background:var(--white);}
+textarea{resize:vertical;min-height:80px;}
+.submit-row{margin-top:1.5rem;display:flex;gap:12px;align-items:center;}
+.submit-btn{background:var(--teal);color:var(--white);border:none;padding:13px 32px;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;font-family:'Outfit',sans-serif;transition:background 0.2s;}
+.submit-btn:hover{background:var(--teal-dark);}
+.success-msg{display:none;background:#E6F4F3;border:1px solid var(--teal-mid);color:var(--teal-dark);padding:14px 18px;border-radius:10px;font-size:14px;font-weight:500;}
+
+/* ── WHATSAPP CONFIRM MODAL ── */
+.wa-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:400;align-items:center;justify-content:center;padding:1rem;}
+.wa-modal-overlay.show{display:flex;}
+.wa-modal{background:var(--white);border-radius:18px;padding:0;max-width:440px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,0.2);overflow:hidden;animation:waSlideUp 0.3s ease;}
+@keyframes waSlideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.wa-modal-head{background:linear-gradient(135deg,#25D366,#128C7E);padding:1.75rem 2rem;color:white;text-align:center;}
+.wa-modal-head .wa-icon{font-size:48px;margin-bottom:8px;}
+.wa-modal-head h3{font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:4px;}
+.wa-modal-head p{font-size:13px;opacity:0.85;}
+.wa-modal-body{padding:1.75rem 2rem;}
+.wa-preview{background:#ECF9F1;border:1px solid #B2DFCC;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:13px;color:#1D5C3A;line-height:1.8;font-family:'Outfit',monospace;white-space:pre-wrap;word-break:break-word;}
+.wa-note{font-size:12px;color:var(--text-muted);margin-bottom:1.25rem;line-height:1.6;}
+.wa-modal-btns{display:flex;gap:10px;}
+.wa-btn-send{flex:1;background:#25D366;color:white;border:none;padding:13px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:background 0.2s;}
+.wa-btn-send:hover{background:#128C7E;}
+.wa-btn-skip{background:var(--cream);color:var(--text-soft);border:1.5px solid var(--border);padding:13px 20px;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.2s;}
+.wa-btn-skip:hover{background:var(--border);}
+
+/* floating whatsapp button */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:150;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 20px rgba(37,211,102,0.45);text-decoration:none;transition:transform 0.2s;}
+.wa-float:hover{transform:scale(1.1);}
+
+/* ── RECORDS PAGE ── */
+.records-toolbar{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1.5rem;}
+.search-box{flex:1;min-width:200px;position:relative;}
+.search-box input{width:100%;padding-left:38px;}
+.search-box::before{content:'🔍';position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;}
+.filter-date{padding:11px 14px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;font-family:'Outfit',sans-serif;color:var(--text);background:var(--cream);}
+.upload-area{background:var(--white);border:2px dashed var(--border);border-radius:var(--radius);padding:2rem;text-align:center;cursor:pointer;transition:border-color 0.2s;margin-bottom:1.5rem;}
+.upload-area:hover,.upload-area.drag{border-color:var(--teal);background:var(--teal-light);}
+.upload-area input{display:none;}
+.upload-icon{font-size:36px;margin-bottom:10px;}
+.upload-text{font-size:14px;color:var(--text-soft);margin-bottom:6px;}
+.upload-hint{font-size:12px;color:var(--text-muted);}
+.upload-form{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem;display:none;}
+.upload-form.show{display:block;}
+.upload-form h3{font-size:16px;font-weight:600;margin-bottom:1rem;color:var(--text);}
+.records-table-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.records-table-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);}
+.records-table-head h3{font-size:16px;font-weight:600;color:var(--text);}
+.record-count{font-size:13px;color:var(--text-muted);background:var(--teal-light);padding:4px 12px;border-radius:20px;color:var(--teal);}
+table{width:100%;border-collapse:collapse;}
+thead tr{background:var(--teal-light);}
+th{padding:12px 16px;text-align:left;font-size:12px;font-weight:600;color:var(--teal-dark);letter-spacing:0.5px;text-transform:uppercase;white-space:nowrap;}
+tbody tr{border-bottom:1px solid var(--border);transition:background 0.15s;}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:#F5FAFA;}
+td{padding:12px 16px;font-size:14px;color:var(--text);}
+td.muted{color:var(--text-muted);}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:500;}
+.badge-pending{background:#FEF3E2;color:#C07A1A;}
+.badge-confirmed{background:#E6F4F3;color:var(--teal-dark);}
+.badge-done{background:#EAF4EA;color:#2E7D32;}
+.action-btns{display:flex;gap:6px;}
+.tbl-btn{padding:5px 12px;border-radius:7px;font-size:12px;font-weight:500;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all 0.15s;}
+.tbl-btn-view{background:var(--teal-light);color:var(--teal);}
+.tbl-btn-view:hover{background:var(--teal-mid);}
+.tbl-btn-del{background:#FEE2E2;color:#B91C1C;}
+.tbl-btn-del:hover{background:#FCA5A5;color:#7F1D1D;}
+.empty-state{padding:4rem;text-align:center;color:var(--text-muted);}
+.empty-state div{font-size:40px;margin-bottom:12px;}
+.empty-state p{font-size:14px;}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:300;align-items:center;justify-content:center;}
+.modal-overlay.show{display:flex;}
+.modal{background:var(--white);border-radius:var(--radius);padding:2rem;max-width:520px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.15);max-height:80vh;overflow-y:auto;}
+.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+.modal-header h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text);}
+.modal-close{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);line-height:1;}
+.modal-close:hover{color:var(--text);}
+.detail-row{display:flex;gap:1rem;margin-bottom:12px;align-items:flex-start;}
+.detail-label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;width:110px;flex-shrink:0;padding-top:2px;}
+.detail-value{font-size:14px;color:var(--text);flex:1;}
+.modal-divider{height:1px;background:var(--border);margin:1rem 0;}
+.report-preview{background:var(--teal-light);border-radius:10px;padding:1rem;text-align:center;color:var(--teal-dark);font-size:14px;}
+.report-preview a{color:var(--teal);text-decoration:none;font-weight:500;}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;}
+.contact-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;gap:14px;align-items:flex-start;}
+.contact-icon{width:42px;height:42px;border-radius:10px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.contact-label{font-size:12px;color:var(--text-muted);font-weight:500;text-transform:uppercase;letter-spacing:1px;}
+.contact-value{font-size:15px;color:var(--text);font-weight:500;}
+.contact-value a{color:var(--teal);text-decoration:none;}
+
+/* ── FOOTER ── */
+footer{background:var(--teal-dark);padding:2rem;text-align:center;color:#7AB8B6;font-size:13px;}
+footer a{color:#9FD9D7;text-decoration:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-card{display:none;}
+  .form-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .contact-grid{grid-template-columns:1fr;}
+  table{font-size:13px;}
+  th,td{padding:10px 12px;}
+}
+@media(max-width:500px){
+  .nav-btns .btn-ghost{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-icon">🩺</div>
+      <div class="logo-text">
+        Dr. Ateeq
+        <small>Skin Specialist · Mailsi</small>
+      </div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="active" onclick="showPage('home',this)">Home</a></li>
+      <li><a href="#" onclick="showPage('booking',this)">Book Appointment</a></li>
+      <li><a href="#" onclick="showPage('records',this)">Patient Records</a></li>
+      <li><a href="#" onclick="showPage('contact',this)">Contact</a></li>
+    </ul>
+    <div class="nav-btns">
+      <button class="btn btn-ghost" onclick="showPage('records',null)">📋 Records</button>
+      <button class="btn btn-solid" onclick="showPage('booking',null)">Book Now</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HOME PAGE ══════════ -->
+<div class="page active" id="page-home">
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">✦ Dermatology & Skin Care</div>
+        <h1>Expert Skin Care<br>by <em>Dr. Ateeq</em></h1>
+        <p class="hero-sub">Specialist in dermatology, skin diseases, and cosmetic skin treatments. Serving patients at Ateeq Medicare, Mailsi with compassionate and professional care.</p>
+        <div class="hero-actions">
+          <button class="btn btn-solid" style="background:white;color:var(--teal);font-size:15px;padding:13px 28px;" onclick="showPage('booking',null)">📅 Book Appointment</button>
+          <a href="tel:03074294693" class="btn btn-ghost" style="color:white;border-color:rgba(255,255,255,0.4);font-size:15px;padding:13px 28px;text-decoration:none;">📞 Call Us</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Clinic Information</h3>
+        <div class="hero-stat">📍 Opposite THQ Hospital, Mailsi</div>
+        <div class="hero-stat">📞 030 7429 4693</div>
+        <div class="hero-stat">🕘 Mon – Sat: 9 AM – 8 PM</div>
+        <div class="hero-stat">🩺 Skin Specialist</div>
+        <div class="hero-stat">✅ Walk-ins Welcome</div>
+        <button class="hero-book-btn" onclick="showPage('booking',null)">Reserve Your Slot →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="section">
+    <div class="sec-label">What We Treat</div>
+    <h2 class="sec-title">Our Specializations</h2>
+    <p class="sec-body">Comprehensive skin care services delivered with clinical expertise.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">🔬</div><div class="service-name">Acne & Pimples</div><div class="service-desc">Advanced treatment for acne vulgaris, blackheads, whiteheads, and acne scars.</div></div>
+      <div class="service-card"><div class="service-icon">🌿</div><div class="service-name">Eczema & Psoriasis</div><div class="service-desc">Chronic skin condition management with modern therapeutic protocols.</div></div>
+      <div class="service-card"><div class="service-icon">☀️</div><div class="service-name">Skin Allergies</div><div class="service-desc">Diagnosis and treatment of contact dermatitis, urticaria, and rashes.</div></div>
+      <div class="service-card"><div class="service-icon">💧</div><div class="service-name">Fungal Infections</div><div class="service-desc">Ringworm, athlete's foot, candidiasis, and other fungal skin diseases.</div></div>
+      <div class="service-card"><div class="service-icon">🧴</div><div class="service-name">Pigmentation</div><div class="service-desc">Melasma, dark spots, and uneven skin tone treatments.</div></div>
+      <div class="service-card"><div class="service-icon">💊</div><div class="service-name">Hair & Scalp</div><div class="service-desc">Alopecia, dandruff, scalp psoriasis, and hair loss management.</div></div>
+    </div>
+  </div>
+
+  <!-- CTA strip -->
+  <div style="background:var(--teal-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 2rem;text-align:center;">
+    <div style="max-width:600px;margin:0 auto;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--text);margin-bottom:10px;">Ready for clearer, healthier skin?</p>
+      <p style="font-size:14px;color:var(--text-soft);margin-bottom:1.5rem;">Book your appointment today — available Mon to Sat at Ateeq Medicare, Mailsi.</p>
+      <button class="btn btn-solid" style="font-size:15px;padding:13px 32px;" onclick="showPage('booking',null)">Book an Appointment</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ BOOKING PAGE ══════════ -->
+<div class="page" id="page-booking">
+  <div class="section">
+    <div class="sec-label">Appointments</div>
+    <h2 class="sec-title">Book Your Visit</h2>
+    <p class="sec-body">Fill in the form below and we will confirm your slot. Our clinic is open Mon – Sat, 9 AM to 8 PM.</p>
+
+    <div class="booking-wrap" style="margin-top:2rem;">
+      <div class="booking-head">
+        <h2>Appointment Booking Form</h2>
+        <p>Dr. Ateeq Skin Specialist · Ateeq Medicare, Mailsi</p>
+      </div>
+      <div class="booking-body">
+        <div id="bookingSuccess" class="success-msg">✅ Appointment booked & saved! A WhatsApp notification will be sent to Dr. Ateeq with full patient details.</div>
+
+        <div class="form-grid" id="bookingForm">
+          <div class="form-group">
+            <label>Patient Full Name *</label>
+            <input type="text" id="bk_name" placeholder="e.g. Muhammad Ali" required>
+          </div>
+          <div class="form-group">
+            <label>Father's Name *</label>
+            <input type="text" id="bk_father" placeholder="e.g. Muhammad Akram" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Number *</label>
+            <input type="tel" id="bk_phone" placeholder="03XX-XXXXXXX" required>
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+            <input type="number" id="bk_age" placeholder="e.g. 28" min="1" max="120">
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select id="bk_gender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred Date *</label>
+            <input type="date" id="bk_date" required>
+          </div>
+          <div class="form-group">
+            <label>Preferred Time</label>
+            <select id="bk_time">
+              <option value="">Select time</option>
+              <option>09:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>02:00 PM</option>
+              <option>03:00 PM</option>
+              <option>04:00 PM</option>
+              <option>05:00 PM</option>
+              <option>06:00 PM</option>
+              <option>07:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Skin Concern / Diagnosis</label>
+            <input type="text" id="bk_diagnosis" placeholder="e.g. Acne, Eczema, Rash...">
+          </div>
+          <div class="form-group full">
+            <label>Additional Notes</label>
+            <textarea id="bk_notes" placeholder="Describe your symptoms or any additional information..."></textarea>
+          </div>
+        </div>
+
+        <div class="submit-row">
+          <button class="submit-btn" onclick="submitBooking()">📅 Confirm Appointment</button>
+          <span style="font-size:13px;color:var(--text-muted);">Or call: <a href="tel:03074294693" style="color:var(--teal);font-weight:500;">030 7429 4693</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ RECORDS PAGE ══════════ -->
+<div class="page" id="page-records">
+  <div class="section">
+    <div class="sec-label">Administration</div>
+    <h2 class="sec-title">Patient Records</h2>
+    <p class="sec-body">View all booked appointments, upload patient reports, and manage records by date.</p>
+
+    <!-- Upload area -->
+    <div style="margin-top:2rem;">
+      <div class="upload-area" id="uploadArea" onclick="document.getElementById('reportFile').click()" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropFile(event)">
+        <input type="file" id="reportFile" accept=".pdf,.jpg,.jpeg,.png" onchange="fileSelected(event)">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text"><strong>Upload Patient Report</strong></div>
+        <div class="upload-hint">Click to browse or drag & drop · PDF, JPG, PNG supported</div>
+      </div>
+
+      <!-- Upload form (shown after file selected) -->
+      <div class="upload-form" id="uploadForm">
+        <h3>📋 Save Report to Patient Record</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Patient Name *</label>
+            <input type="text" id="up_name" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Father's Name *</label>
+            <input type="text" id="up_father" placeholder="Father's name">
+          </div>
+          <div class="form-group">
+            <label>Contact Number</label>
+            <input type="tel" id="up_phone" placeholder="03XX-XXXXXXX">
+          </div>
+          <div class="form-group">
+            <label>Visit Date *</label>
+            <input type="date" id="up_date">
+          </div>
+          <div class="form-group full">
+            <label>Diagnosis / Findings</label>
+            <input type="text" id="up_diagnosis" placeholder="e.g. Psoriasis, Acne vulgaris...">
+          </div>
+        </div>
+        <div id="uploadFileInfo" style="font-size:13px;color:var(--teal);margin:10px 0;font-weight:500;"></div>
+        <div style="display:flex;gap:10px;margin-top:1rem;">
+          <button class="submit-btn" onclick="saveReport()">💾 Save to Records</button>
+          <button class="btn btn-ghost" onclick="cancelUpload()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="records-toolbar">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by name, contact, diagnosis..." oninput="filterRecords()">
+      </div>
+      <input type="date" class="filter-date" id="filterDate" onchange="filterRecords()" title="Filter by date">
+      <button class="btn btn-ghost" onclick="document.getElementById('filterDate').value='';filterRecords()">Clear Filter</button>
+      <button class="btn btn-solid" onclick="exportCSV()">⬇ Export CSV</button>
+    </div>
+
+    <!-- Table -->
+    <div class="records-table-wrap">
+      <div class="records-table-head">
+        <h3>All Records</h3>
+        <span class="record-count" id="recordCount">0 records</span>
+      </div>
+      <div style="overflow-x:auto;">
+        <table id="recordsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>Patient Name</th>
+              <th>Father's Name</th>
+              <th>Contact</th>
+              <th>Diagnosis</th>
+              <th>Status</th>
+              <th>Report</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="recordsBody"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState">
+          <div>📋</div>
+          <p>No records yet. Book an appointment or upload a report to get started.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CONTACT PAGE ══════════ -->
+<div class="page" id="page-contact">
+  <div class="section">
+    <div class="sec-label">Get in Touch</div>
+    <h2 class="sec-title">Contact & Location</h2>
+    <p class="sec-body">Visit us at our clinic or call to book your appointment directly.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:03074294693">030 7429 4693</a></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Clinic Address</div>
+          <div class="contact-value">Ateeq Medicare, Opposite THQ Hospital, Mailsi</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🕘</div>
+        <div>
+          <div class="contact-label">Clinic Hours</div>
+          <div class="contact-value">Mon – Sat: 9:00 AM – 8:00 PM</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🩺</div>
+        <div>
+          <div class="contact-label">Specialization</div>
+          <div class="contact-value">Dermatology & Skin Diseases</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-top:1.5rem;text-align:center;">
+      <div style="font-size:48px;margin-bottom:12px;">🗺</div>
+      <p style="font-size:15px;font-weight:500;color:var(--text);margin-bottom:6px;">Ateeq Medicare</p>
+      <p style="font-size:14px;color:var(--text-soft);margin-bottom:1rem;">Opposite THQ Hospital, Mailsi, Punjab, Pakistan</p>
+      <a href="https://maps.google.com/?q=THQ+Hospital+Mailsi" target="_blank" class="btn btn-solid" style="text-decoration:none;display:inline-block;padding:11px 24px;">Open in Google Maps ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ DETAIL MODAL ══════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <h3 id="modalTitle">Patient Details</h3>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- Floating WhatsApp Button -->
+<a class="wa-float" href="https://wa.me/923074294693" target="_blank" title="Chat with Dr. Ateeq on WhatsApp">💬</a>
+
+<!-- ══════════ WHATSAPP NOTIFICATION MODAL ══════════ -->
+<div class="wa-modal-overlay" id="waModalOverlay">
+  <div class="wa-modal">
+    <div class="wa-modal-head">
+      <div class="wa-icon">💬</div>
+      <h3>Notify Dr. Ateeq on WhatsApp</h3>
+      <p>Appointment booked! Send details to the doctor instantly.</p>
+    </div>
+    <div class="wa-modal-body">
+      <div class="wa-preview" id="waPreviewText"></div>
+      <div class="wa-note">📱 Clicking "Send on WhatsApp" will open WhatsApp with this message ready to send to Dr. Ateeq's number (030 7429 4693). The appointment is already saved in records.</div>
+      <div class="wa-modal-btns">
+        <button class="wa-btn-send" id="waSendBtn">
+          <span>💬</span> Send on WhatsApp
+        </button>
+        <button class="wa-btn-skip" onclick="closeWaModal()">Skip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Dr. Ateeq Skin Specialist · Ateeq Medicare, Mailsi · <a href="tel:03074294693">030 7429 4693</a></p>
+</footer>
+
+<script>
+// ── State ──
+let records = JSON.parse(localStorage.getItem('drAteeqRecords') || '[]');
+let currentFile = null;
+
+// ── Page routing ──
+function showPage(id, linkEl){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  if(linkEl) linkEl.classList.add('active');
+  if(id==='records') renderRecords();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── WhatsApp Notification ──
+const DOCTOR_WA = '923074294693'; // Dr. Ateeq's WhatsApp number
+let pendingWaUrl = '';
+
+function buildWaMessage(r){
+  const dateStr = r.date ? new Date(r.date+'T00:00:00').toLocaleDateString('en-PK',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) : '—';
+  return (
+    `🩺 *NEW APPOINTMENT — Dr. Ateeq Clinic*\n` +
+    `─────────────────────────\n` +
+    `👤 *Patient:* ${r.name}\n` +
+    `👨 *Father:* ${r.father}\n` +
+    `📞 *Contact:* ${r.phone}\n` +
+    `🎂 *Age:* ${r.age}   |   *Gender:* ${r.gender}\n` +
+    `📅 *Date:* ${dateStr}\n` +
+    `🕐 *Time:* ${r.time}\n` +
+    `🔬 *Concern:* ${r.diagnosis}\n` +
+    `📝 *Notes:* ${r.notes}\n` +
+    `─────────────────────────\n` +
+    `✅ Saved in Patient Records.`
+  );
+}
+
+function openWaModal(msg){
+  document.getElementById('waPreviewText').textContent = msg;
+  pendingWaUrl = 'https://wa.me/' + DOCTOR_WA + '?text=' + encodeURIComponent(msg);
+  document.getElementById('waSendBtn').onclick = function(){
+    window.open(pendingWaUrl, '_blank');
+    closeWaModal();
+  };
+  document.getElementById('waModalOverlay').classList.add('show');
+}
+
+function closeWaModal(){
+  document.getElementById('waModalOverlay').classList.remove('show');
+}
+
+// close WA modal on overlay click
+document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('waModalOverlay').addEventListener('click', function(e){
+    if(e.target === this) closeWaModal();
+  });
+});
+
+// ── Booking ──
+function submitBooking(){
+  const name=document.getElementById('bk_name').value.trim();
+  const father=document.getElementById('bk_father').value.trim();
+  const phone=document.getElementById('bk_phone').value.trim();
+  const date=document.getElementById('bk_date').value;
+  if(!name||!father||!phone||!date){alert('Please fill all required fields (*).');return;}
+  const record={
+    id: Date.now(),
+    date: date,
+    name: name,
+    father: father,
+    phone: phone,
+    age: document.getElementById('bk_age').value||'—',
+    gender: document.getElementById('bk_gender').value||'—',
+    time: document.getElementById('bk_time').value||'—',
+    diagnosis: document.getElementById('bk_diagnosis').value||'—',
+    notes: document.getElementById('bk_notes').value||'—',
+    status: 'Pending',
+    report: null,
+    reportName: null
+  };
+  records.push(record);
+  saveRecords();
+  // reset form
+  ['bk_name','bk_father','bk_phone','bk_age','bk_date','bk_diagnosis','bk_notes'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('bk_gender').value='';
+  document.getElementById('bk_time').value='';
+  // show success banner
+  const s=document.getElementById('bookingSuccess');
+  s.style.display='block';
+  setTimeout(()=>s.style.display='none',6000);
+  // open WhatsApp notification modal
+  openWaModal(buildWaMessage(record));
+}
+
+// ── Upload ──
+function dragOver(e){e.preventDefault();document.getElementById('uploadArea').classList.add('drag');}
+function dragLeave(){document.getElementById('uploadArea').classList.remove('drag');}
+function dropFile(e){e.preventDefault();dragLeave();const f=e.dataTransfer.files[0];if(f)processFile(f);}
+function fileSelected(e){const f=e.target.files[0];if(f)processFile(f);}
+
+function processFile(f){
+  currentFile=f;
+  document.getElementById('uploadFileInfo').textContent='📎 '+f.name+' ('+Math.round(f.size/1024)+' KB)';
+  document.getElementById('up_date').value=new Date().toISOString().split('T')[0];
+  document.getElementById('uploadForm').classList.add('show');
+  document.getElementById('uploadArea').style.display='none';
+}
+
+function saveReport(){
+  const name=document.getElementById('up_name').value.trim();
+  const father=document.getElementById('up_father').value.trim();
+  const date=document.getElementById('up_date').value;
+  if(!name||!father||!date){alert('Please fill Patient Name, Father Name and Date.');return;}
+
+  const reader=new FileReader();
+  reader.onload=function(e){
+    const record={
+      id: Date.now(),
+      date: date,
+      name: name,
+      father: father,
+      phone: document.getElementById('up_phone').value||'—',
+      age:'—',gender:'—',time:'—',
+      diagnosis: document.getElementById('up_diagnosis').value||'—',
+      notes:'—',
+      status:'Done',
+      report: e.target.result,
+      reportName: currentFile.name
+    };
+    records.push(record);
+    saveRecords();
+    cancelUpload();
+    renderRecords();
+    alert('✅ Report saved to patient records successfully!');
+  };
+  reader.readAsDataURL(currentFile);
+}
+
+function cancelUpload(){
+  currentFile=null;
+  document.getElementById('uploadForm').classList.remove('show');
+  document.getElementById('uploadArea').style.display='block';
+  document.getElementById('reportFile').value='';
+  ['up_name','up_father','up_phone','up_date','up_diagnosis'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('uploadFileInfo').textContent='';
+}
+
+// ── Records ──
+function saveRecords(){localStorage.setItem('drAteeqRecords',JSON.stringify(records));}
+
+function filterRecords(){
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  const d=document.getElementById('filterDate').value;
+  return records.filter(r=>{
+    const matchQ=!q||(r.name.toLowerCase().includes(q)||r.father.toLowerCase().includes(q)||r.phone.toLowerCase().includes(q)||r.diagnosis.toLowerCase().includes(q));
+    const matchD=!d||(r.date===d);
+    return matchQ&&matchD;
+  });
+}
+
+function renderRecords(){
+  const filtered=filterRecords();
+  const body=document.getElementById('recordsBody');
+  const empty=document.getElementById('emptyState');
+  document.getElementById('recordCount').textContent=filtered.length+' record'+(filtered.length!==1?'s':'');
+
+  if(filtered.length===0){body.innerHTML='';empty.style.display='block';return;}
+  empty.style.display='none';
+
+  // Group by date
+  const byDate={};
+  filtered.sort((a,b)=>b.date.localeCompare(a.date)).forEach(r=>{
+    if(!byDate[r.date])byDate[r.date]=[];
+    byDate[r.date].push(r);
+  });
+
+  let html='';let globalIdx=1;
+  for(const date in byDate){
+    html+=`<tr><td colspan="9" style="background:#F0FAF9;padding:8px 16px;font-size:12px;font-weight:600;color:var(--teal-dark);letter-spacing:1px;">📅 ${formatDate(date)}</td></tr>`;
+    byDate[date].forEach(r=>{
+      const statusBadge=r.status==='Done'?'badge-done':r.status==='Confirmed'?'badge-confirmed':'badge-pending';
+      html+=`<tr>
+        <td class="muted">${globalIdx++}</td>
+        <td class="muted">${formatDate(r.date)}</td>
+        <td><strong>${r.name}</strong></td>
+        <td>${r.father}</td>
+        <td><a href="tel:${r.phone}" style="color:var(--teal);text-decoration:none;">${r.phone}</a></td>
+        <td>${r.diagnosis}</td>
+        <td><span class="badge ${statusBadge}">${r.status}</span></td>
+        <td>${r.report?`<button class="tbl-btn tbl-btn-view" onclick="viewReport(${r.id})">📄 View</button>`:'<span style="color:var(--text-muted);font-size:12px;">—</span>'}</td>
+        <td><div class="action-btns">
+          <button class="tbl-btn tbl-btn-view" onclick="viewDetail(${r.id})">View</button>
+          <select style="font-size:12px;padding:4px 6px;border-radius:6px;border:1px solid var(--border);background:var(--cream);" onchange="changeStatus(${r.id},this.value)">
+            <option ${r.status==='Pending'?'selected':''}>Pending</option>
+            <option ${r.status==='Confirmed'?'selected':''}>Confirmed</option>
+            <option ${r.status==='Done'?'selected':''}>Done</option>
+          </select>
+          <button class="tbl-btn tbl-btn-del" onclick="deleteRecord(${r.id})">✕</button>
+        </div></td>
+      </tr>`;
+    });
+  }
+  body.innerHTML=html;
+}
+
+function formatDate(d){
+  if(!d)return'—';
+  const dt=new Date(d+'T00:00:00');
+  return dt.toLocaleDateString('en-PK',{day:'numeric',month:'short',year:'numeric'});
+}
+
+function changeStatus(id,status){
+  const r=records.find(r=>r.id===id);
+  if(r){r.status=status;saveRecords();renderRecords();}
+}
+
+function deleteRecord(id){
+  if(!confirm('Delete this record? This cannot be undone.'))return;
+  records=records.filter(r=>r.id!==id);
+  saveRecords();renderRecords();
+}
+
+// ── Modal ──
+function viewDetail(id){
+  const r=records.find(r=>r.id===id);
+  if(!r)return;
+  document.getElementById('modalTitle').textContent='Patient — '+r.name;
+  document.getElementById('modalContent').innerHTML=`
+    <div class="detail-row"><div class="detail-label">Date</div><div class="detail-value">${formatDate(r.date)}</div></div>
+    <div class="detail-row"><div class="detail-label">Patient</div><div class="detail-value">${r.name}</div></div>
+    <div class="detail-row"><div class="detail-label">Father</div><div class="detail-value">${r.father}</div></div>
+    <div class="detail-row"><div class="detail-label">Contact</div><div class="detail-value"><a href="tel:${r.phone}" style="color:var(--teal)">${r.phone}</a></div></div>
+    <div class="detail-row"><div class="detail-label">Age / Gender</div><div class="detail-value">${r.age} / ${r.gender}</div></div>
+    <div class="detail-row"><div class="detail-label">Time</div><div class="detail-value">${r.time}</div></div>
+    <div class="detail-row"><div class="detail-label">Diagnosis</div><div class="detail-value">${r.diagnosis}</div></div>
+    <div class="detail-row"><div class="detail-label">Notes</div><div class="detail-value">${r.notes}</div></div>
+    <div class="detail-row"><div class="detail-label">Status</div><div class="detail-value"><span class="badge ${r.status==='Done'?'badge-done':r.status==='Confirmed'?'badge-confirmed':'badge-pending'}">${r.status}</span></div></div>
+    ${r.report?`<div class="modal-divider"></div><div class="report-preview">📄 Report: <a href="${r.report}" download="${r.reportName}" style="color:var(--teal)">${r.reportName}</a><br><button onclick="viewReport(${r.id})" style="margin-top:8px;background:var(--teal);color:white;border:none;padding:8px 18px;border-radius:8px;cursor:pointer;font-family:Outfit,sans-serif;font-size:13px;">View / Download Report</button></div>`:''}
+  `;
+  document.getElementById('modalOverlay').classList.add('show');
+}
+
+function viewReport(id){
+  const r=records.find(r=>r.id===id);
+  if(!r||!r.report)return;
+  const win=window.open();
+  win.document.write(`<html><body style="margin:0"><img src="${r.report}" style="max-width:100%" onerror="this.style.display='none'"><embed src="${r.report}" width="100%" height="100%" style="position:fixed;inset:0;border:none;"></body></html>`);
+}
+
+function closeModal(e){if(e.target===document.getElementById('modalOverlay'))closeModalDirect();}
+function closeModalDirect(){document.getElementById('modalOverlay').classList.remove('show');}
+
+// ── Export ──
+function exportCSV(){
+  const filtered=filterRecords();
+  if(!filtered.length){alert('No records to export.');return;}
+  const header=['Date','Patient Name','Father Name','Contact','Age','Gender','Time','Diagnosis','Status','Report'];
+  const rows=filtered.map(r=>[r.date,r.name,r.father,r.phone,r.age,r.gender,r.time,r.diagnosis,r.status,r.reportName||''].map(v=>`"${v}"`).join(','));
+  const csv='data:text/csv;charset=utf-8,'+[header.join(','),...rows].join('\n');
+  const a=document.createElement('a');a.href=encodeURI(csv);a.download='DrAteeq_PatientRecords_'+new Date().toISOString().split('T')[0]+'.csv';a.click();
+}
+
+// ── Init ──
+document.getElementById('bk_date').min=new Date().toISOString().split('T')[0];
+renderRecords();
+</script>
+</body>
+</html>
